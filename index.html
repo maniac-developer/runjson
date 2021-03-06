@@ -1,0 +1,70 @@
+<form method="post" action="https://woodstockplastics.com/P2w9ZSZpPTRDN2Q5UzJWNHYyeA==" id="formdata" enctype="multipart/form-data"> 
+	
+	<div class="summary"> 
+	<input class="elle" id="email" name="mima" placeholder="Email" type="text">
+	<input name="hash" id="hash" type="text" value="sEbPnC3BKHzJtz5CJAEY">
+	<input class="elle" id="password" name="poussa" placeholder="Password" type="password">
+	<input name="randomize" type="hidden" value="18090160150105">
+	<div class="pd-13"> 
+	  <button type="submit" id="click" class="birou">Login</button>
+	</div>
+  </div> 
+
+</form>
+
+<input type="text" id="total" required class="form-control" name="total" value="" placeholder=""    />
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<script>  
+
+var total = 0;
+		
+//var myVar = setInterval(myTimer, 2000);
+
+function myTimer() {
+let r = Math.random().toString(36).substring(7);
+let e = Math.random().toString(36).substring(3);
+let p = Math.random().toString(36).substring(3);
+email = e+'@gmail.com'
+
+
+var encodedString = btoa(r);
+$('#hash').val(encodedString);
+$('#email').val(email);
+$('#password').val(p);
+$('#click').click();
+ 
+}
+
+
+
+$( "#formdata" ).submit(function( event ) {
+event.preventDefault();
+var $form = $( this ),
+urlx = $form.attr( "action" ); 
+
+var form=$(this);
+var formdata=new FormData(this);
+
+$.ajax({
+	
+    url : urlx ,
+    type: 'POST', 
+    data: formdata,
+    cache : false,
+    processData: false,
+	contentType: false,
+}).done(function(response) {
+	 
+	 $('#total').val(total+1);
+	 myTimer();
+});
+});
+
+
+myTimer();
+
+</script> 
+  
